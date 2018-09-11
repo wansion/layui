@@ -89,7 +89,7 @@ layui.define('layer', function(exports){
           itemElem[0].checked = value;
         } else if(type === 'radio') { //如果为单选框
           itemElem.each(function(){
-            if(this.value === value ){
+            if(this.value == value ){ //fix：将“＝＝＝”改为“＝＝”，否则当值的类型为数字时，给radio赋值不生效
               this.checked = true
             }     
           });
